@@ -9,7 +9,6 @@
     "chart.js": "*",
     "classnames": "*",
     "moment": "*",
-    "notiflix-react": "^1.4.0",
     "nouislider": "*",
     "perfect-scrollbar": "*",
     "react": "^16.9.0",

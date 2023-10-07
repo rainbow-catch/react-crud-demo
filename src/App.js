@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './../src/App.css';
 import ListItem from './ListItem';
-import Notiflix from 'notiflix-react';
 import { bake_cookie, read_cookie, delete_cookie } from 'sfcookies';
 const cookie_key = 'TODOS';
 
@@ -54,8 +53,6 @@ export default class componentName extends Component {
     this.setState({ newTodo: '' });
 
 		bake_cookie(cookie_key, this.state.todos);
-
-		Notiflix.Notify.Success('A new todo added!');
 	};
 
 	handleChange = event => {
@@ -69,7 +66,6 @@ export default class componentName extends Component {
 		delete_cookie(cookie_key);
 
 		this.setState({ todos: [{}] });
-		Notiflix.Notify.Failure('All todos deleted!');
 	};
 
 	deleteTodo(index) {
@@ -78,8 +74,6 @@ export default class componentName extends Component {
 		delete todos[index];
 
 		this.setState({ todos });
-
-		Notiflix.Notify.Failure('The todo is deleted!');
 
 		bake_cookie(cookie_key, this.state.todos);
 	}
@@ -106,8 +100,6 @@ export default class componentName extends Component {
 		todos[this.state.editingIndex] = todo;
 
 		this.setState({ todos, editing: false, editingIndex: null, newTodo: '' });
-
-		Notiflix.Notify.Info('Todo Updated!');
 	};
 
 	render() {
